@@ -1,102 +1,101 @@
-<?php include ('header.php'); ?>
+<?php include('header.php'); ?>
 <style>
     .notepad {
         font-family: Arial, sans-serif;
         margin: 20px;
         line-height: 2.3;
         margin-left: 20px;
-    }
+    }    
 </style>
 
 <?php
 $code = <<<'CODE'
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Code Display with Copy Button</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 20px;
-            }
-            .code-container {
-                background-color: #f4f4f4;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                padding: 10px;
-                position: relative;
-            }
-            .copy-button {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                background-color: #007bff;
-                color: white;
-                border: none;
-                padding: 5px 10px;
-                cursor: pointer;
-                border-radius: 3px;
-            }
-            .copy-button:active {
-                background-color: #0056b3;
-            }   
-        </style>
-    </head>
-    <body>
-    <div class="code-container">
-        <button class="copy-button" onclick="copyCode()">Copy</button>
-        <pre id="code-block">
-    def chatbot_response(request):
-        email = request.session.get('email')
-        user = users_details.objects.get(email=email)
-        try:
-            if request.method == 'POST':
-                prompt = request.POST.get('prompt')
-                model_engine = "gpt-3.5-turbo"
-                completion = openai.Completion.create(
-                    engine=model_engine,
-                    prompt=prompt,
-                    max_tokens=1024,
-                    n=1,
-                    stop=None,
-                    temperature=0.5,
-                )
-                response = completion.choices[0].text
-                return render(request, 'bot/chatbot_response.html', {'response': response})
-        except:
-            messages.success(request, 'Im Here to give you Useful Content')
-        return render(request, 'bot/chatbot.html',{'user':user})
-        </pre>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            document.querySelectorAll('pre code').forEach((block) => {
-                hljs.highlightBlock(block);
-            });
-        });
-
-        function copyCode() {
-            const codeBlock = document.getElementById('code-block');
-            const range = document.createRange();
-            range.selectNode(codeBlock);
-            window.getSelection().removeAllRanges(); // Clear any existing selections
-            window.getSelection().addRange(range); // Select the code block
-            document.execCommand('copy');
-            window.getSelection().removeAllRanges(); // Deselect the code block
-            alert('Code copied to clipboard!');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Display with Copy Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
         }
-    </script>
+        .code-container {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            position: relative;
+        }
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            z-index: 10;
+        }
+        .copy-button:active {
+            background-color: #0056b3;
+        }   
+    </style>
+</head>
+<body>
+<div class="code-container">
+    <button class="copy-button" onclick="copyCode()">Copy</button>
+    <pre id="code-block">
+def chatbot_response(request):
+    email = request.session.get('email')
+    user = users_details.objects.get(email=email)
+    try:
+        if request.method == 'POST':
+            prompt = request.POST.get('prompt')
+            model_engine = "gpt-3.5-turbo"
+            completion = openai.Completion.create(
+                engine=model_engine,
+                prompt=prompt,
+                max_tokens=1024,
+                n=1,
+                stop=None,
+                temperature=0.5,
+            )
+            response = completion.choices[0].text
+            return render(request, 'bot/chatbot_response.html', {'response': response})
+    except:
+        messages.success(request, 'Im Here to give you Useful Content')
+    return render(request, 'bot/chatbot.html',{'user':user})
+    </pre>
+</div>
 
-    </body>
-    </html>
-    CODE;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block);
+        });
+    });
+
+    function copyCode() {
+        const codeBlock = document.getElementById('code-block');
+        const range = document.createRange();
+        range.selectNode(codeBlock);
+        window.getSelection().removeAllRanges(); // Clear any existing selections
+        window.getSelection().addRange(range); // Select the code block
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges(); // Deselect the code block
+        alert('Code copied to clipboard!');
+    }
+</script>
+
+</body>
+</html>
+CODE;
 ?>
-<!-- Navbar -->
-
 
 <p style="margin-top:100px;"></p>
 
@@ -109,7 +108,7 @@ $code = <<<'CODE'
                     <img src="images/access.jpg" class="img-fluid" alt="">
                 </div>
                 <p>Create a index.html and save this file, Goto to browser(Chrome, FireFox, Edge) and enter the path you
-                    should proberly see Hello</p>
+                    should probably see Hello</p>
                 <h2>Steps to Build Gemini Chatbot</h2>
                 <p>To build an interactive and functional Gemini chatbot using HTML, CSS, and JavaScript, follow these
                     simple step-by-step instructions:</p>
@@ -213,7 +212,6 @@ $code = <<<'CODE'
     </div>
 </div>
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
 <script>
@@ -246,5 +244,3 @@ $code = <<<'CODE'
         alert('Code copied to clipboard!');
     }
 </script>
-
-<!-- -->
