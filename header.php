@@ -21,7 +21,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background:#080808;">
+  <nav class="navbar navbar-large navbar-expand-lg navbar-light fixed-top" style="background:#080808;">
 
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">

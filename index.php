@@ -1,13 +1,13 @@
-<?php include('header.php'); ?>
+<?php include ('header.php'); ?>
 <style>
     .notepad {
         font-family: Arial, sans-serif;
         margin: 20px;
         line-height: 2.3;
         margin-left: 20px;
-
     }
 </style>
+
 <?php
 $code = <<<'CODE'
     <!DOCTYPE html>
@@ -41,13 +41,10 @@ $code = <<<'CODE'
             }
             .copy-button:active {
                 background-color: #0056b3;
-            }
+            }   
         </style>
     </head>
     <body>
-
-  
-
     <div class="code-container">
         <button class="copy-button" onclick="copyCode()">Copy</button>
         <pre id="code-block">
@@ -98,28 +95,34 @@ $code = <<<'CODE'
     </html>
     CODE;
 ?>
+<!-- Navbar -->
+
 
 <p style="margin-top:100px;"></p>
 
 <div class="container overflow-hidden">
     <div class="row gy-5">
-
         <div class="col-md-8 order-1 order-md-1 ">
             <div class="codecontent">
                 <h1>Build A Google Gemini Chatbot with HTML CSS and JavaScript</h1>
                 <div class="col-md-12">
                     <img src="images/access.jpg" class="img-fluid" alt="">
                 </div>
-
-                <p>Create a index.html and save this file, Goto to browser(Chrome, FireFox, Edge) and enter the path you should proberly see Hello</p>
+                <p>Create a index.html and save this file, Goto to browser(Chrome, FireFox, Edge) and enter the path you
+                    should proberly see Hello</p>
                 <h2>Steps to Build Gemini Chatbot</h2>
-                <p>To build an interactive and functional Gemini chatbot using HTML, CSS, and JavaScript, follow these simple step-by-step instructions:</p>
+                <p>To build an interactive and functional Gemini chatbot using HTML, CSS, and JavaScript, follow these
+                    simple step-by-step instructions:</p>
 
                 <ul class="notepad">
                     <li>Create a folder with any name you like, e.g., <strong>gemini-chatbot</strong>.</li>
-                    <li>Inside it, create the necessary files: <strong>index.html</strong>, <strong>style.css</strong>, and <strong>script.js</strong>.</li>
-                    <li>Download the <strong>Images</strong> folder and put it in your project directory. This folder contains logos you’ll need for this chatbot project.</li>
-                    <li>In your <strong>index.html</strong> file, add the essential HTML markup to structure your Gemini chat layout. It features a greetings header, suggestion list, chat section, and typing form, all structured with semantic tags.</li>
+                    <li>Inside it, create the necessary files: <strong>index.html</strong>, <strong>style.css</strong>,
+                        and <strong>script.js</strong>.</li>
+                    <li>Download the <strong>Images</strong> folder and put it in your project directory. This folder
+                        contains logos you’ll need for this chatbot project.</li>
+                    <li>In your <strong>index.html</strong> file, add the essential HTML markup to structure your Gemini
+                        chat layout. It features a greetings header, suggestion list, chat section, and typing form, all
+                        structured with semantic tags.</li>
                 </ul>
 
                 <div class="code-container">
@@ -133,7 +136,8 @@ $code = <<<'CODE'
         <div class="col-md-4 order-2 order-md-2 card-view">
             <ul class="nav nav-tabs title-nav mb-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" style="background-color:black !important;" href="#">Technology</a>
+                    <a class="nav-link active" aria-current="page" style="background-color:black !important;"
+                        href="#">Technology</a>
                 </li>
             </ul>
 
@@ -146,7 +150,8 @@ $code = <<<'CODE'
                     </div>
                     <div class="col-8 col-md-8 p-0">
                         <div class="card-body pb-zero">
-                            <h5 class="card-title small-font">30+ Free Login & Registration Form Templates in HTML & CSS</h5>
+                            <h5 class="card-title small-font">30+ Free Login & Registration Form Templates in HTML & CSS
+                            </h5>
                             <p class="card-text"><small class="text-muted">August 04, 2024</small></p>
                         </div>
                     </div>
@@ -159,7 +164,8 @@ $code = <<<'CODE'
                     </div>
                     <div class="col-8 col-md-8 p-0">
                         <div class="card-body">
-                            <h5 class="card-title small-font">30+ Free Login & Registration Form Templates in HTML & CSS</h5>
+                            <h5 class="card-title small-font">30+ Free Login & Registration Form Templates in HTML & CSS
+                            </h5>
                             <p class="card-text"><small class="text-muted">August 04, 2024</small></p>
                         </div>
                     </div>
@@ -168,7 +174,8 @@ $code = <<<'CODE'
 
             <ul class="nav nav-tabs title-nav mb-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" style="background-color:black !important;" href="#">Research</a>
+                    <a class="nav-link active" aria-current="page" style="background-color:black !important;"
+                        href="#">Research</a>
                 </li>
             </ul>
 
@@ -181,7 +188,8 @@ $code = <<<'CODE'
                     </div>
                     <div class="col-8 col-md-8 p-0">
                         <div class="card-body pb-zero">
-                            <h5 class="card-title small-font">30+ Free Login & Registration Form Templates in HTML & CSS</h5>
+                            <h5 class="card-title small-font">30+ Free Login & Registration Form Templates in HTML & CSS
+                            </h5>
                             <p class="card-text"><small class="text-muted">August 04, 2024</small></p>
                         </div>
                     </div>
@@ -194,25 +202,33 @@ $code = <<<'CODE'
                     </div>
                     <div class="col-8 col-md-8 p-0">
                         <div class="card-body">
-                            <h5 class="card-title small-font">30+ Free Login & Registration Form Templates in HTML & CSS</h5>
+                            <h5 class="card-title small-font">30+ Free Login & Registration Form Templates in HTML & CSS
+                            </h5>
                             <p class="card-text"><small class="text-muted">August 04, 2024</small></p>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
-
-
     </div>
 </div>
 
 
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
 <script>
+    window.addEventListener('scroll', function () {
+        let navbar = document.querySelector('.navbar');
+
+        if (window.scrollY > 50) {
+            navbar.classList.add('navbar-small');
+            navbar.classList.remove('navbar-large');
+        } else {
+            navbar.classList.add('navbar-large');
+            navbar.classList.remove('navbar-small');
+        }
+    });
+
     document.addEventListener('DOMContentLoaded', (event) => {
         document.querySelectorAll('pre code').forEach((block) => {
             hljs.highlightBlock(block);
@@ -230,3 +246,5 @@ $code = <<<'CODE'
         alert('Code copied to clipboard!');
     }
 </script>
+
+<!-- -->
