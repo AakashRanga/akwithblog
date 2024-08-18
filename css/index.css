@@ -241,3 +241,11 @@ footer {
     /* Logo height for small navbar */
     transition: height 0.3s;
 }
+
+
+/* for larage screen size more(nama mobile screen la view panum pothu laptop screen ku next pona nama page size differ agum so nama font-size use pani nama vertical width use pani pamalaminga) */
+@media (max-width:1450px) {
+    .container{
+        min-width: 1200px;
+    }
+}
